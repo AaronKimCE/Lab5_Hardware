@@ -27,79 +27,47 @@ echo ======================================================\n
 echo Running all tests..."\n\n
 
 # Add tests below
-test "PINA:2 => PORTC: 0x60"
-setPINA 2
+test "PINA:2 (0xFD) => PORTC: 0x60"
+setPINA 0xFD
 continue 5
 expectPORTC 0x60
 checkResult
 
-test "PINA:4 => PORTC: 0x70"
-setPINA 4
+test "PINA:4 (0xFB) => PORTC: 0x70"
+setPINA 0xFB
 continue 5
 expectPORTC 0x70
 checkResult
 
-test "PINA:6 => PORTC: 0x38"
-setPINA 6
+test "PINA:6 (0xF9) => PORTC: 0x38"
+setPINA 0xF9
 continue 5
 expectPORTC 0x38
 checkResult
 
-test "PINA:9 => PORTC: 0x3C"
-setPINA 9
+test "PINA:9 (0xF6) => PORTC: 0x3C"
+setPINA 0xF6
 continue 5
 expectPORTC 0x3C
 checkResult
 
-test "PINA:12 => PORTC: 0x3E"
-setPINA 12
+test "PINA:12 (0xF3) => PORTC: 0x3E"
+setPINA 0xF3
 continue 5
 expectPORTC 0x3E
 checkResult
 
-test "PINA:15 => PORTC: 0x3F"
-setPINA 15
+test "PINA:15 (0xF0) => PORTC: 0x3F"
+setPINA 0xF0
 continue 5
 expectPORTC 0x3f
 checkResult
 
-test "PINA:0 => PORTC: 0x40"
-setPINA 0
-continue 5
-expectPORTC 0x40
-checkResult
-
-test "PINA:0 & Key => PORTC: 0x40"
-setPINA 0x10
-continue 5
-expectPORTC 0x40
-checkResult
-
-test "PINA:1 & Key + Seated => PORTC: 0xE0"
-setPINA 0x31
-continue 5
-expectPORTC 0xe0
-checkResult
-
-test "PINA:15 & Key + Seated + Seatbelt => PORTC: 0x3F"
+test "PINA:0 (0xFF) => PORTC: 0x40"
 setPINA 0xFF
 continue 5
-expectPORTC 0x3F
+expectPORTC 0x40
 checkResult
-
-test "PINA:15 & Seated + Seatbelt => PORTC: 0x3F"
-setPINA 0x6F
-continue 5
-expectPORTC 0x3F
-checkResult
-
-test "PINA:11 & Seated => PORTC: 0x3E"
-setPINA 0x2B
-continue 5
-expectPORTC 0x3E
-checkResult
-
-
 
 # Report on how many tests passed/tests ran
 set $passed=$tests-$failed
